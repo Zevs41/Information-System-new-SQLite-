@@ -48,7 +48,9 @@ namespace Курсовая2
 
         private void buttonRoles_Click(object sender, EventArgs e)
         {
-
+            FormRoles formRoles = new FormRoles();
+            formRoles.Show();
+            this.Close();
         }
 
         private void buttonDevelopment_Click(object sender, EventArgs e)

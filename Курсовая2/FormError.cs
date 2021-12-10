@@ -56,6 +56,11 @@ namespace Курсовая2
                 labelError1.Text = "Error 4!";
                 labelError1Text.Text = "Password or Login \n or Gmail are used!";
             }
+            if (Error.error ==5)
+            {
+                labelError1.Text = "Error 5!";
+                labelError1Text.Text = "Please click \n leftmost field";
+            }
         }
     }
 }

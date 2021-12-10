@@ -11,12 +11,13 @@ using System.Data.SQLite;
 
 namespace Курсовая2
 {
-    public partial class FormDevelopment : Form
+    public partial class FormRoles : Form
     {
-        public FormDevelopment()
+        public FormRoles()
         {
             InitializeComponent();
         }
+
         private SQLiteConnection sql_con;
         private SQLiteCommand sql_cmd;
         private SQLiteDataAdapter DB;
@@ -43,23 +44,23 @@ namespace Курсовая2
             SetConnection();
             sql_con.Open();
             sql_cmd = sql_con.CreateCommand();
-            string ComandText = "SELECT * FROM Development";
+            string ComandText = "SELECT * FROM Roles";
             DB = new SQLiteDataAdapter(ComandText, sql_con);
             DS.Reset();
             DB.Fill(DS);
             DT = DS.Tables[0];
-            dataGridViewDevelopment.DataSource = DT;
+            dataGridViewRoles.DataSource = DT;
             sql_con.Close();
         }
 
         private void Add()
         {
-            if (textBoxDeveloper.Text !="" && textBoxName.Text != "" && textBoxStatus.Text !="" && textBoxType.Text != "") 
+            if (textBoxID.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxSurname.Text != "" && textBoxName.Text != "" && textBoxGmail.Text != "" && textBoxAccessLevel.Text != "")
             {
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "INSERT INTO Development(Name, Type, Status, The_Developer) VALUES ('" + textBoxName.Text + "','" + textBoxType.Text + "','" + textBoxStatus.Text + "','" + textBoxDeveloper.Text + "')";
+                string ComandText = "INSERT INTO Roles(Login, Pass, Surname, Name, Gmail, Access_level) VALUES ('" + textBoxLogin.Text + "','" + textBoxPass.Text + "','" + textBoxSurname.Text + "','" + textBoxName.Text + "','" + textBoxGmail.Text + "','" + textBoxAccessLevel.Text + "')";
                 ExecuteQuery(ComandText);
                 LoadData();
             }
@@ -73,7 +74,7 @@ namespace Курсовая2
 
         private void Find()
         {
-            if (textBoxID.Text == "" && textBoxDeveloper.Text == "" && textBoxName.Text == "" && textBoxStatus.Text == "" && textBoxType.Text == "")
+            if (textBoxID.Text == "" && textBoxLogin.Text == "" && textBoxPass.Text == "" && textBoxSurname.Text == "" && textBoxName.Text == "" && textBoxGmail.Text == "" && textBoxAccessLevel.Text == "")
             {
                 LoadData();
             }
@@ -82,12 +83,12 @@ namespace Курсовая2
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "SELECT * FROM Development WHERE ID LIKE '" + textBoxID.Text + "' OR Name LIKE '" + textBoxName.Text + "' OR Type LIKE '" + textBoxType.Text + "' OR Status LIKE '" + textBoxStatus.Text + "' OR The_Developer LIKE '" + textBoxDeveloper.Text + "'";
+                string ComandText = "SELECT * FROM Roles WHERE ID LIKE '" + textBoxID.Text + "' OR Login LIKE '" + textBoxLogin.Text + "' OR Pass LIKE '" + textBoxPass.Text + "' OR Surname LIKE '" + textBoxSurname.Text + "' OR Name LIKE '" + textBoxName.Text + "'OR Gmail LIKE '" + textBoxGmail.Text + "'OR Access_level LIKE '" + textBoxAccessLevel.Text + "'";
                 DB = new SQLiteDataAdapter(ComandText, sql_con);
                 DS.Reset();
                 DB.Fill(DS);
                 DT = DS.Tables[0];
-                dataGridViewDevelopment.DataSource = DT;
+                dataGridViewRoles.DataSource = DT;
                 sql_con.Close();
             }
 
@@ -95,12 +96,12 @@ namespace Курсовая2
 
         private void Change()
         {
-            if (textBoxDeveloper.Text != "" && textBoxName.Text != "" && textBoxStatus.Text != "" && textBoxType.Text != "")
+            if (textBoxID.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxSurname.Text != "" && textBoxName.Text != "" && textBoxGmail.Text != "" && textBoxAccessLevel.Text != "")
             {
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "UPDATE Development SET Name = '" + textBoxName.Text + "', Type = '" + textBoxType.Text + "', Status = '" + textBoxStatus.Text + "', The_Developer = '" + textBoxDeveloper.Text + "' WHERE ID = '"+ textBoxID.Text +"'";
+                string ComandText = "UPDATE Roles SET Login = '" + textBoxLogin.Text + "', Pass = '" + textBoxPass.Text + "', Surname = '" + textBoxSurname.Text + "', Name = '" + textBoxName.Text + "', Gmail = '" + textBoxGmail.Text + "', Access_level = '" + textBoxAccessLevel.Text + "' WHERE ID = '" + textBoxID.Text + "'";
                 ExecuteQuery(ComandText);
                 LoadData();
             }
@@ -119,7 +120,7 @@ namespace Курсовая2
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "DELETE FROM Development WHERE ID = '" + textBoxID.Text + "'";
+                string ComandText = "DELETE FROM Roles WHERE ID = '" + textBoxID.Text + "'";
                 ExecuteQuery(ComandText);
                 LoadData();
             }
@@ -129,19 +130,18 @@ namespace Курсовая2
                 FormError error = new FormError();
                 error.ShowDialog();
             }
+
         }
 
         private void Clear()
         {
+            textBoxAccessLevel.Text = "";
+            textBoxGmail.Text = "";
             textBoxID.Text = "";
-            textBoxStatus.Text = "";
-            textBoxDeveloper.Text = "";
+            textBoxLogin.Text = "";
             textBoxName.Text = "";
-            textBoxType.Text = "";
-        }
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            textBoxPass.Text = "";
+            textBoxSurname.Text = "";
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -155,7 +155,13 @@ namespace Курсовая2
             formMainMenu.Show();
             this.Close();
         }
-        private void FormDevelopment_Load(object sender, EventArgs e)
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormRoles_Load(object sender, EventArgs e)
         {
             LoadData();
         }
@@ -165,19 +171,19 @@ namespace Курсовая2
             Add();
         }
 
-        private void buttonFind_Click(object sender, EventArgs e)
+        private void buttonChange_Click(object sender, EventArgs e)
         {
-            Find();
-        }
-
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            Update();
+            Change();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             Delete();
+        }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            Find();
         }
 
         private void buttonUp_Click(object sender, EventArgs e)
@@ -190,17 +196,19 @@ namespace Курсовая2
             Clear();
         }
 
-        private void dataGridViewDevelopment_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewRoles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try 
+            try
             {
-                textBoxID.Text = dataGridViewDevelopment.SelectedRows[0].Cells[0].Value.ToString(); 
-                textBoxName.Text = dataGridViewDevelopment.SelectedRows[0].Cells[1].Value.ToString();
-                textBoxType.Text = dataGridViewDevelopment.SelectedRows[0].Cells[2].Value.ToString();
-                textBoxStatus.Text = dataGridViewDevelopment.SelectedRows[0].Cells[3].Value.ToString();
-                textBoxDeveloper.Text = dataGridViewDevelopment.SelectedRows[0].Cells[4].Value.ToString();
+                textBoxID.Text = dataGridViewRoles.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxLogin.Text = dataGridViewRoles.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxPass.Text = dataGridViewRoles.SelectedRows[0].Cells[2].Value.ToString();
+                textBoxSurname.Text = dataGridViewRoles.SelectedRows[0].Cells[3].Value.ToString();
+                textBoxName.Text = dataGridViewRoles.SelectedRows[0].Cells[4].Value.ToString();
+                textBoxGmail.Text = dataGridViewRoles.SelectedRows[0].Cells[5].Value.ToString();
+                textBoxAccessLevel.Text = dataGridViewRoles.SelectedRows[0].Cells[6].Value.ToString();
             }
-            catch 
+            catch
             {
                 Error.error = 5;
                 FormError error = new FormError();

@@ -44,7 +44,7 @@ namespace Курсовая2
             SetConnection();
             sql_con.Open();
             sql_cmd = sql_con.CreateCommand();
-            string ComandText = "SELECT Name, Count, Total_price, Date FROM Sales";
+            string ComandText = "SELECT * FROM Sales";
             DB = new SQLiteDataAdapter(ComandText, sql_con);
             DS.Reset();
             DB.Fill(DS);
