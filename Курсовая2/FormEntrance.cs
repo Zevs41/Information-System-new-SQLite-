@@ -22,12 +22,36 @@ namespace Курсовая2
 
     public static class User
     {
+        public static string ID = "";
         public static string surname = "";
         public static string name = "";
         public static string gmail = "";
         public static string aceess_Level = "99";
     }
+    public static class CheakUser
+    {
+        public static bool cheakUser = false;
+    }
+    public class FileName
+    {
+        public static string fileName = "";
+    }
+    
 
+    public sealed class Help
+    {
+        public static int help = 99;
+    }
+
+    public static class Month
+    {
+        public static int month = 0;
+    }
+
+    public static class Count
+    {
+        public static int count = 0;
+    }
     public partial class FormEntance : Form
     {
         public FormEntance()

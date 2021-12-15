@@ -23,6 +23,7 @@ namespace Курсовая2
         private SQLiteDataAdapter DB;
         private DataSet DS = new DataSet();
         private DataTable DT = new DataTable();
+        string date = "";
 
         private void SetConnection()
         {
@@ -44,6 +45,7 @@ namespace Курсовая2
             SetConnection();
             sql_con.Open();
             sql_cmd = sql_con.CreateCommand();
+            textBoxReistrationDate.Text = "00000000";
             string ComandText = "SELECT * FROM Roles";
             DB = new SQLiteDataAdapter(ComandText, sql_con);
             DS.Reset();
@@ -55,12 +57,13 @@ namespace Курсовая2
 
         private void Add()
         {
-            if (textBoxID.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxSurname.Text != "" && textBoxName.Text != "" && textBoxGmail.Text != "" && textBoxAccessLevel.Text != "")
+            if (textBoxID.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxSurname.Text != "" && textBoxName.Text != "" && textBoxGmail.Text != "" && textBoxAccessLevel.Text != "" && textBoxReistrationDate.Text != "")
             {
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "INSERT INTO Roles(Login, Pass, Surname, Name, Gmail, Access_level) VALUES ('" + textBoxLogin.Text + "','" + textBoxPass.Text + "','" + textBoxSurname.Text + "','" + textBoxName.Text + "','" + textBoxGmail.Text + "','" + textBoxAccessLevel.Text + "')";
+                string date = textBoxReistrationDate.Text.Substring(6, 4) + textBoxReistrationDate.Text.Substring(3, 2) + textBoxReistrationDate.Text.Substring(0, 2);
+                string ComandText = "INSERT INTO Roles(Login, Pass, Surname, Name, Gmail, Access_level, Registration_date) VALUES ('" + textBoxLogin.Text + "','" + textBoxPass.Text + "','" + textBoxSurname.Text + "','" + textBoxName.Text + "','" + textBoxGmail.Text + "','" + textBoxAccessLevel.Text + "','" + date + "')";
                 ExecuteQuery(ComandText);
                 LoadData();
             }
@@ -74,7 +77,7 @@ namespace Курсовая2
 
         private void Find()
         {
-            if (textBoxID.Text == "" && textBoxLogin.Text == "" && textBoxPass.Text == "" && textBoxSurname.Text == "" && textBoxName.Text == "" && textBoxGmail.Text == "" && textBoxAccessLevel.Text == "")
+            if (textBoxID.Text == "" && textBoxLogin.Text == "" && textBoxPass.Text == "" && textBoxSurname.Text == "" && textBoxName.Text == "" && textBoxGmail.Text == "" && textBoxAccessLevel.Text == "" && textBoxReistrationDate.Text == "")
             {
                 LoadData();
             }
@@ -83,7 +86,8 @@ namespace Курсовая2
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "SELECT * FROM Roles WHERE ID LIKE '" + textBoxID.Text + "' OR Login LIKE '" + textBoxLogin.Text + "' OR Pass LIKE '" + textBoxPass.Text + "' OR Surname LIKE '" + textBoxSurname.Text + "' OR Name LIKE '" + textBoxName.Text + "'OR Gmail LIKE '" + textBoxGmail.Text + "'OR Access_level LIKE '" + textBoxAccessLevel.Text + "'";
+                date = textBoxReistrationDate.Text.Substring(6, 4) + textBoxReistrationDate.Text.Substring(3, 2) + textBoxReistrationDate.Text.Substring(0, 2);
+                string ComandText = "SELECT * FROM Roles WHERE ID LIKE '" + textBoxID.Text + "' OR Login LIKE '" + textBoxLogin.Text + "' OR Pass LIKE '" + textBoxPass.Text + "' OR Surname LIKE '" + textBoxSurname.Text + "' OR Name LIKE '" + textBoxName.Text + "'OR Gmail LIKE '" + textBoxGmail.Text + "'OR Access_level LIKE '" + textBoxAccessLevel.Text + "' OR Registration_date LIKE '"+ date + "'";
                 DB = new SQLiteDataAdapter(ComandText, sql_con);
                 DS.Reset();
                 DB.Fill(DS);
@@ -96,12 +100,13 @@ namespace Курсовая2
 
         private void Change()
         {
-            if (textBoxID.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxSurname.Text != "" && textBoxName.Text != "" && textBoxGmail.Text != "" && textBoxAccessLevel.Text != "")
+            if (textBoxID.Text != "" && textBoxLogin.Text != "" && textBoxPass.Text != "" && textBoxSurname.Text != "" && textBoxName.Text != "" && textBoxGmail.Text != "" && textBoxAccessLevel.Text != "" && textBoxReistrationDate.Text != "")
             {
                 SetConnection();
                 sql_con.Open();
                 sql_cmd = sql_con.CreateCommand();
-                string ComandText = "UPDATE Roles SET Login = '" + textBoxLogin.Text + "', Pass = '" + textBoxPass.Text + "', Surname = '" + textBoxSurname.Text + "', Name = '" + textBoxName.Text + "', Gmail = '" + textBoxGmail.Text + "', Access_level = '" + textBoxAccessLevel.Text + "' WHERE ID = '" + textBoxID.Text + "'";
+                date = textBoxReistrationDate.Text.Substring(6, 4) + textBoxReistrationDate.Text.Substring(3, 2) + textBoxReistrationDate.Text.Substring(0, 2);
+                string ComandText = "UPDATE Roles SET Login = '" + textBoxLogin.Text + "', Pass = '" + textBoxPass.Text + "', Surname = '" + textBoxSurname.Text + "', Name = '" + textBoxName.Text + "', Gmail = '" + textBoxGmail.Text + "', Access_level = '" + textBoxAccessLevel.Text + "', Registration_date = '"+ date +"' WHERE ID = '" + textBoxID.Text + "'";
                 ExecuteQuery(ComandText);
                 LoadData();
             }
@@ -142,6 +147,7 @@ namespace Курсовая2
             textBoxName.Text = "";
             textBoxPass.Text = "";
             textBoxSurname.Text = "";
+            textBoxReistrationDate.Text = "";
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -207,6 +213,7 @@ namespace Курсовая2
                 textBoxName.Text = dataGridViewRoles.SelectedRows[0].Cells[4].Value.ToString();
                 textBoxGmail.Text = dataGridViewRoles.SelectedRows[0].Cells[5].Value.ToString();
                 textBoxAccessLevel.Text = dataGridViewRoles.SelectedRows[0].Cells[6].Value.ToString();
+                textBoxReistrationDate.Text = dataGridViewRoles.SelectedRows[0].Cells[7].Value.ToString();
             }
             catch
             {

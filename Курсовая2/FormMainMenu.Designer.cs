@@ -106,6 +106,7 @@
             this.buttonReports.TabIndex = 4;
             this.buttonReports.Text = "Reports";
             this.buttonReports.UseVisualStyleBackColor = false;
+            this.buttonReports.Click += new System.EventHandler(this.buttonReports_Click);
             // 
             // labelUserData
             // 
