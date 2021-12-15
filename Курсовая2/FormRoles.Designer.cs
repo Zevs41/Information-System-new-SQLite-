@@ -44,13 +44,15 @@
             this.labelAccessLevel = new System.Windows.Forms.Label();
             this.labelGmail = new System.Windows.Forms.Label();
             this.textBoxAccessLevel = new System.Windows.Forms.TextBox();
-            this.textBoxGmail = new System.Windows.Forms.TextBox();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.textBoxGmail = new System.Windows.Forms.TextBox();
+            this.labelRegistrationDate = new System.Windows.Forms.Label();
+            this.textBoxReistrationDate = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@
             this.dataGridViewRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRoles.Location = new System.Drawing.Point(16, 48);
             this.dataGridViewRoles.Name = "dataGridViewRoles";
-            this.dataGridViewRoles.Size = new System.Drawing.Size(773, 390);
+            this.dataGridViewRoles.Size = new System.Drawing.Size(881, 390);
             this.dataGridViewRoles.TabIndex = 0;
             this.dataGridViewRoles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRoles_CellClick);
             // 
@@ -83,7 +85,7 @@
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExit.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(827, 12);
+            this.buttonExit.Location = new System.Drawing.Point(944, 12);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 30);
             this.buttonExit.TabIndex = 2;
@@ -203,20 +205,13 @@
             this.textBoxAccessLevel.Size = new System.Drawing.Size(100, 20);
             this.textBoxAccessLevel.TabIndex = 14;
             // 
-            // textBoxGmail
-            // 
-            this.textBoxGmail.Location = new System.Drawing.Point(564, 444);
-            this.textBoxGmail.Name = "textBoxGmail";
-            this.textBoxGmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxGmail.TabIndex = 13;
-            // 
             // buttonUp
             // 
             this.buttonUp.BackColor = System.Drawing.Color.DimGray;
             this.buttonUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonUp.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonUp.Location = new System.Drawing.Point(827, 303);
+            this.buttonUp.Location = new System.Drawing.Point(944, 307);
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(75, 30);
             this.buttonUp.TabIndex = 7;
@@ -230,7 +225,7 @@
             this.buttonFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFind.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonFind.Location = new System.Drawing.Point(827, 267);
+            this.buttonFind.Location = new System.Drawing.Point(944, 271);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(75, 30);
             this.buttonFind.TabIndex = 6;
@@ -244,7 +239,7 @@
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDelete.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonDelete.Location = new System.Drawing.Point(827, 231);
+            this.buttonDelete.Location = new System.Drawing.Point(944, 235);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 30);
             this.buttonDelete.TabIndex = 5;
@@ -258,7 +253,7 @@
             this.buttonChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonChange.Font = new System.Drawing.Font("Rockwell", 12F);
-            this.buttonChange.Location = new System.Drawing.Point(827, 195);
+            this.buttonChange.Location = new System.Drawing.Point(944, 199);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(75, 30);
             this.buttonChange.TabIndex = 4;
@@ -272,7 +267,7 @@
             this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(827, 159);
+            this.buttonAdd.Location = new System.Drawing.Point(944, 163);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 30);
             this.buttonAdd.TabIndex = 3;
@@ -286,7 +281,7 @@
             this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonClear.Font = new System.Drawing.Font("Rockwell", 8F);
-            this.buttonClear.Location = new System.Drawing.Point(827, 444);
+            this.buttonClear.Location = new System.Drawing.Point(944, 444);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(75, 20);
             this.buttonClear.TabIndex = 15;
@@ -294,12 +289,40 @@
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // textBoxGmail
+            // 
+            this.textBoxGmail.Location = new System.Drawing.Point(564, 444);
+            this.textBoxGmail.Name = "textBoxGmail";
+            this.textBoxGmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxGmail.TabIndex = 13;
+            // 
+            // labelRegistrationDate
+            // 
+            this.labelRegistrationDate.AutoSize = true;
+            this.labelRegistrationDate.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegistrationDate.Location = new System.Drawing.Point(778, 467);
+            this.labelRegistrationDate.Name = "labelRegistrationDate";
+            this.labelRegistrationDate.Size = new System.Drawing.Size(105, 16);
+            this.labelRegistrationDate.TabIndex = 51;
+            this.labelRegistrationDate.Text = "Registration date";
+            // 
+            // textBoxReistrationDate
+            // 
+            this.textBoxReistrationDate.Location = new System.Drawing.Point(781, 444);
+            this.textBoxReistrationDate.Mask = "00/00/0000";
+            this.textBoxReistrationDate.Name = "textBoxReistrationDate";
+            this.textBoxReistrationDate.Size = new System.Drawing.Size(100, 20);
+            this.textBoxReistrationDate.TabIndex = 61;
+            this.textBoxReistrationDate.ValidatingType = typeof(System.DateTime);
+            // 
             // FormRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(914, 519);
+            this.ClientSize = new System.Drawing.Size(1031, 519);
+            this.Controls.Add(this.textBoxReistrationDate);
+            this.Controls.Add(this.labelRegistrationDate);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonFind);
@@ -352,12 +375,14 @@
         private System.Windows.Forms.Label labelAccessLevel;
         private System.Windows.Forms.Label labelGmail;
         private System.Windows.Forms.TextBox textBoxAccessLevel;
-        private System.Windows.Forms.TextBox textBoxGmail;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.TextBox textBoxGmail;
+        private System.Windows.Forms.Label labelRegistrationDate;
+        private System.Windows.Forms.MaskedTextBox textBoxReistrationDate;
     }
 }

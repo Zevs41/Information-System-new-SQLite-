@@ -40,9 +40,9 @@ namespace Курсовая2
             if (Convert.ToInt32(User.aceess_Level) == 1)
             {
                 buttonRoles.Visible = false;
-                this.Size = new Size(643,200);
-                buttonLogOut.Location = new Point(18,12);
-                buttonExit.Location = new Point(555,12);
+                this.Size = new Size(643, 200);
+                buttonLogOut.Location = new Point(18, 12);
+                buttonExit.Location = new Point(555, 12);
             }
         }
 
@@ -76,6 +76,13 @@ namespace Курсовая2
         {
             FormGoods formGoods = new FormGoods();
             formGoods.Show();
+            this.Close();
+        }
+
+        private void buttonReports_Click(object sender, EventArgs e)
+        {
+            FormReports formReports = new FormReports();
+            formReports.Show();
             this.Close();
         }
     }

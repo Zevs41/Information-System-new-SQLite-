@@ -61,13 +61,14 @@
             // labelSuccessText
             // 
             this.labelSuccessText.BackColor = System.Drawing.Color.DimGray;
-            this.labelSuccessText.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSuccessText.Font = new System.Drawing.Font("Rockwell", 14F);
             this.labelSuccessText.Location = new System.Drawing.Point(10, 30);
             this.labelSuccessText.Name = "labelSuccessText";
             this.labelSuccessText.Size = new System.Drawing.Size(230, 75);
             this.labelSuccessText.TabIndex = 5;
             this.labelSuccessText.Text = "SuccesText";
             this.labelSuccessText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSuccessText.Click += new System.EventHandler(this.labelSuccessText_Click);
             // 
             // FormSuccess
             // 
@@ -91,6 +92,6 @@
 
         private System.Windows.Forms.Label labelSuccess;
         private System.Windows.Forms.Button buttonCloseSuccesful;
-        private System.Windows.Forms.Label labelSuccessText;
+        public System.Windows.Forms.Label labelSuccessText;
     }
 }

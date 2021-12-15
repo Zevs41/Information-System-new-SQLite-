@@ -61,6 +61,11 @@ namespace Курсовая2
                 labelError1.Text = "Error 5!";
                 labelError1Text.Text = "Please click \n leftmost field";
             }
+            if (Error.error == 6)
+            {
+                labelError1.Text = "Error 6!";
+                labelError1Text.Text = "This is not a month!";
+            }
         }
     }
 }
