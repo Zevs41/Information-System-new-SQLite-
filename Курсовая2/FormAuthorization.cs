@@ -46,7 +46,6 @@ namespace Курсовая2
             sql_cmd.ExecuteNonQuery();
             if (DT.Rows.Count > 0)
             {
-                User.ID = DT.Rows[0].ItemArray[0].ToString();
                 User.surname = DT.Rows[0].ItemArray[3].ToString();
                 User.name = DT.Rows[0].ItemArray[4].ToString();
                 User.gmail = DT.Rows[0].ItemArray[5].ToString();

@@ -42,9 +42,6 @@
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxDevelopment = new System.Windows.Forms.TextBox();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonBuy = new System.Windows.Forms.Button();
-            this.labelUserData = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGoods)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +51,7 @@
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonExit.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(381, 12);
+            this.buttonExit.Location = new System.Drawing.Point(418, 12);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 30);
             this.buttonExit.TabIndex = 17;
@@ -67,11 +64,10 @@
             this.dataGridViewGoods.BackgroundColor = System.Drawing.Color.DimGray;
             this.dataGridViewGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGoods.GridColor = System.Drawing.Color.Gray;
-            this.dataGridViewGoods.Location = new System.Drawing.Point(12, 119);
+            this.dataGridViewGoods.Location = new System.Drawing.Point(12, 58);
             this.dataGridViewGoods.Name = "dataGridViewGoods";
             this.dataGridViewGoods.Size = new System.Drawing.Size(346, 375);
             this.dataGridViewGoods.TabIndex = 18;
-            this.dataGridViewGoods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGoods_CellClick);
             // 
             // buttonBackToMainMenu
             // 
@@ -93,7 +89,7 @@
             this.buttonUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonUp.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonUp.Location = new System.Drawing.Point(381, 350);
+            this.buttonUp.Location = new System.Drawing.Point(418, 289);
             this.buttonUp.Name = "buttonUp";
             this.buttonUp.Size = new System.Drawing.Size(75, 30);
             this.buttonUp.TabIndex = 24;
@@ -107,7 +103,7 @@
             this.buttonFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFind.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonFind.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonFind.Location = new System.Drawing.Point(381, 314);
+            this.buttonFind.Location = new System.Drawing.Point(418, 253);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(75, 30);
             this.buttonFind.TabIndex = 23;
@@ -121,7 +117,7 @@
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDelete.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonDelete.Location = new System.Drawing.Point(381, 278);
+            this.buttonDelete.Location = new System.Drawing.Point(418, 217);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 30);
             this.buttonDelete.TabIndex = 22;
@@ -135,7 +131,7 @@
             this.buttonChange.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonChange.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonChange.Font = new System.Drawing.Font("Rockwell", 12F);
-            this.buttonChange.Location = new System.Drawing.Point(381, 242);
+            this.buttonChange.Location = new System.Drawing.Point(418, 181);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(75, 30);
             this.buttonChange.TabIndex = 21;
@@ -149,7 +145,7 @@
             this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonAdd.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(381, 206);
+            this.buttonAdd.Location = new System.Drawing.Point(418, 145);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 30);
             this.buttonAdd.TabIndex = 20;
@@ -161,7 +157,7 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(272, 523);
+            this.labelPrice.Location = new System.Drawing.Point(272, 462);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(36, 16);
             this.labelPrice.TabIndex = 49;
@@ -171,7 +167,7 @@
             // 
             this.labelDevelopment.AutoSize = true;
             this.labelDevelopment.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDevelopment.Location = new System.Drawing.Point(142, 523);
+            this.labelDevelopment.Location = new System.Drawing.Point(142, 462);
             this.labelDevelopment.Name = "labelDevelopment";
             this.labelDevelopment.Size = new System.Drawing.Size(84, 16);
             this.labelDevelopment.TabIndex = 48;
@@ -181,7 +177,7 @@
             // 
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(68, 523);
+            this.labelID.Location = new System.Drawing.Point(68, 462);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(20, 16);
             this.labelID.TabIndex = 47;
@@ -189,72 +185,31 @@
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(29, 500);
+            this.textBoxID.Location = new System.Drawing.Point(29, 439);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(100, 20);
             this.textBoxID.TabIndex = 44;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(241, 500);
+            this.textBoxPrice.Location = new System.Drawing.Point(241, 439);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrice.TabIndex = 46;
             // 
             // textBoxDevelopment
             // 
-            this.textBoxDevelopment.Location = new System.Drawing.Point(135, 500);
+            this.textBoxDevelopment.Location = new System.Drawing.Point(135, 439);
             this.textBoxDevelopment.Name = "textBoxDevelopment";
             this.textBoxDevelopment.Size = new System.Drawing.Size(100, 20);
             this.textBoxDevelopment.TabIndex = 45;
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.BackColor = System.Drawing.Color.DimGray;
-            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonClear.Font = new System.Drawing.Font("Rockwell", 8F);
-            this.buttonClear.Location = new System.Drawing.Point(381, 500);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 20);
-            this.buttonClear.TabIndex = 50;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = false;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
-            // 
-            // buttonBuy
-            // 
-            this.buttonBuy.BackColor = System.Drawing.Color.DimGray;
-            this.buttonBuy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonBuy.Font = new System.Drawing.Font("Rockwell", 12.75F);
-            this.buttonBuy.Location = new System.Drawing.Point(381, 386);
-            this.buttonBuy.Name = "buttonBuy";
-            this.buttonBuy.Size = new System.Drawing.Size(75, 30);
-            this.buttonBuy.TabIndex = 51;
-            this.buttonBuy.Text = "Buy";
-            this.buttonBuy.UseVisualStyleBackColor = false;
-            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
-            // 
-            // labelUserData
-            // 
-            this.labelUserData.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserData.Location = new System.Drawing.Point(164, 12);
-            this.labelUserData.Name = "labelUserData";
-            this.labelUserData.Size = new System.Drawing.Size(150, 50);
-            this.labelUserData.TabIndex = 52;
-            this.labelUserData.Text = "Данные пользователя";
-            this.labelUserData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(477, 565);
-            this.Controls.Add(this.labelUserData);
-            this.Controls.Add(this.buttonBuy);
-            this.Controls.Add(this.buttonClear);
+            this.ClientSize = new System.Drawing.Size(505, 515);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelDevelopment);
             this.Controls.Add(this.labelID);
@@ -296,8 +251,5 @@
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TextBox textBoxDevelopment;
-        private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Button buttonBuy;
-        private System.Windows.Forms.Label labelUserData;
     }
 }

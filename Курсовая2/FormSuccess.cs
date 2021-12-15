@@ -25,20 +25,10 @@ namespace Курсовая2
 
         private void buttonCloseSuccesful_Click(object sender, EventArgs e)
         {
-            if (CheakUser.cheakUser == true)
-            {
-                labelSuccessText.Font = new Font("Rockwell", 14, FontStyle.Regular);
-                Success.success = 99;
-                this.Close();
-            }
-            else
-            {
-                FormMainMenu formMainMenu = new FormMainMenu();
-                formMainMenu.Show();
-                labelSuccessText.Font = new Font("Rockwell", 14, FontStyle.Regular);
-                Success.success = 99;
-                this.Close();
-            }
+            FormMainMenu formMainMenu = new FormMainMenu();
+            formMainMenu.Show();
+            Success.success = 99;
+            this.Close();
         }
 
         private void FormSuccess_Load(object sender, EventArgs e)
@@ -51,16 +41,6 @@ namespace Курсовая2
             {
                 labelSuccessText.Text = "Registration \n was successful!";
             }
-            if (Success.success == 2)
-            {
-                labelSuccessText.Font = new Font("Rockwell", 12, FontStyle.Regular);
-                labelSuccessText.Text = "Congratulations, \n the key and the download \n link for your product \n have been sent to the gmail!";
-            }
-        }
-
-        private void labelSuccessText_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

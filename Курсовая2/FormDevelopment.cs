@@ -172,7 +172,7 @@ namespace Курсовая2
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            Change();
+            Update();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

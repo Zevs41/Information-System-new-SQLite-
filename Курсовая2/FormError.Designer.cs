@@ -35,7 +35,7 @@
             // 
             // buttonCloseError1
             // 
-            this.buttonCloseError1.BackColor = System.Drawing.Color.DimGray;
+            this.buttonCloseError1.BackColor = System.Drawing.Color.DarkGray;
             this.buttonCloseError1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCloseError1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCloseError1.Font = new System.Drawing.Font("Rockwell", 14.25F);
@@ -50,7 +50,7 @@
             // 
             // labelError1
             // 
-            this.labelError1.BackColor = System.Drawing.Color.DimGray;
+            this.labelError1.BackColor = System.Drawing.Color.DarkGray;
             this.labelError1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelError1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelError1.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -63,7 +63,7 @@
             // 
             // labelError1Text
             // 
-            this.labelError1Text.BackColor = System.Drawing.Color.DarkGray;
+            this.labelError1Text.BackColor = System.Drawing.Color.DimGray;
             this.labelError1Text.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError1Text.Location = new System.Drawing.Point(10, 30);
             this.labelError1Text.Name = "labelError1Text";
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(250, 150);
             this.Controls.Add(this.labelError1Text);
             this.Controls.Add(this.labelError1);
